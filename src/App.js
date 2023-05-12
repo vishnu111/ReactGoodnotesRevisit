@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./components/HeaderC.js";
+import { useState, useEffect } from "react";
 function App() {
+  const [count, setCount] = useState(0);
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+  useEffect(() => {
+    console.log("this executes everytime");
+  });
+  useEffect(() => {
+    console.log("this executes on first load");
+  }, []);
+  useEffect(() => {
+    console.log("this executes on change of count variable");
+  }, [count]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header color="red" />
+      <h1>This is the home page.{count}</h1>
+      <button onClick={handleClick}>Click me!</button>
     </div>
   );
 }
+const namedTest = 10;
 
+//This is called the named export, we can use it as many times
+export { namedTest };
+
+//This is called default export, we have to use only one time in a file
 export default App;
