@@ -1,4 +1,5 @@
 import Header from "./components/HeaderC.js";
+import Middle from "./components/Middle.js";
 import { useState, useEffect } from "react";
 function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +19,7 @@ function App() {
     <div>
       <Header color="red" />
       <h1>This is the home page.{count}</h1>
-      <button onClick={handleClick}>Click me!</button>
+      <Middle />
     </div>
   );
 }
