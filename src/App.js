@@ -3,9 +3,6 @@ import Middle from "./components/Middle.js";
 import { useState, useEffect } from "react";
 function App() {
   const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount(count + 1);
-  };
   useEffect(() => {
     console.log("this executes everytime");
   });
